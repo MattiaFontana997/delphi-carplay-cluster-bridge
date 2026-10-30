@@ -61,9 +61,19 @@ static DccResult route(const DccMessage *m,DccGuidance *g) {
             return DCC_FIELD;
         g->maneuver_list_seen=1;
         if(f->length) {
+            uint16_t next_index=be16(m->bytes+f->offset);
+            if((!g->current_index.present || g->current_index.value!=next_index) &&
+               !dcc_find(m,DCC_ROOT,10,0)) {
+                /* The previous turn distance belongs to a different step.
+                 * Do not associate it with the newly selected maneuver. */
+                g->distance_to_maneuver_m.present=0;
+            }
             g->current_index.present=1;
-            g->current_index.value=be16(m->bytes+f->offset);
-        }else g->current_index.present=0;
+            g->current_index.value=next_index;
+        }else {
+            g->current_index.present=0;
+            g->distance_to_maneuver_m.present=0;
+        }
     }
 #undef APPLY
     return DCC_OK;
