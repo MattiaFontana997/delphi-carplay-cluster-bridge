@@ -63,6 +63,22 @@ static void analog_test(void) {
     CHECK(dcc_harman_analog_project(&g,&evidence,&view)==DCC_OK);
     CHECK(view.prerequisites_observed && !view.map_video_supported);
 
+    /* A new indexed maneuver without a fresh distance must not inherit
+     * 250 m from the previous maneuver. */
+    {
+        uint8_t next_index[2]={0,8};
+        n=frame(bytes,0x5201);
+        add(bytes,&n,13,next_index,2);
+        apply(&g,bytes,n);
+        n=frame(bytes,0x5202);
+        add(bytes,&n,1,next_index,2);
+        add(bytes,&n,3,&arrow,1);
+        apply(&g,bytes,n);
+        CHECK(dcc_harman_analog_project(&g,&evidence,&view)==DCC_OK);
+        CHECK(view.has_current_maneuver);
+        CHECK(!view.distance_to_turn_m.present);
+    }
+
     CHECK(dcc_guidance_apply(&g,DCC_EVENT_RESET,10,NULL)==DCC_OK);
     CHECK(dcc_harman_analog_project(&g,&evidence,&view)==DCC_OK);
     CHECK(view.status==DCC_ANALOG_EMPTY);
