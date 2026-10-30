@@ -6,7 +6,8 @@
 
 static void w16(uint8_t *p,unsigned x){p[0]=(uint8_t)(x>>8);p[1]=(uint8_t)x;}
 static size_t frame(uint8_t *b,unsigned msg){b[0]=b[1]=0x40;w16(b+4,msg);return 6;}
-static void add(uint8_t *b,size_t *p,unsigned id,const uint8_t *v,size_t n){w16(b+*p,(unsigned)n+4);w16(b+*p+2,id);if(n)memcpy(b+*p+4,v,n);*p+=n+4;}
+static void add(uint8_t *b,size_t *p,unsigned id,const uint8_t *v,size_t n){w16(b+*p,(unsigned)n+4);w16(b+*p+2,id);if(n)memcpy(b+*p+4,v,n);
+    *p+=n+4;}
 static void finish(uint8_t *b,size_t n){w16(b+2,(unsigned)n);}
 static void fail_atomic(uint8_t *b,size_t n,DccResult expected){DccMessage a,c;memset(&a,0xa5,sizeof(a));c=a;CHECK(dcc_decode(b,n,&a)==expected);CHECK(!memcmp(&a,&c,sizeof(a)));}
 typedef struct{unsigned messages,resets;uint64_t epoch;uint64_t distance;int has_distance;} Sink;
