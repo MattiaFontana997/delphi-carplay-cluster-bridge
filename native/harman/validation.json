@@ -1,0 +1,24 @@
+{
+  "status": "experimental-host-only",
+  "target": "Harman MHI2 analogue-cluster guidance projection",
+  "platform_supposed": [
+    "MHI2 VW Discover Pro 5NA 035 020 D (train not yet independently verified)",
+    "Golf 7.5 5G1 920 741 D analogue cluster (OEM navigation BAP support not verified)"
+  ],
+  "module": "native/harman/src/dcc_harman_analog.c",
+  "new_tests": "native/harman/tests/harman_analog_test.c",
+  "validation": {
+    "isolated_c99_compile": "passed locally with GCC -std=c99 -Wall -Wextra -Werror",
+    "isolated_undefined_behavior_sanitizer": "passed locally with -fsanitize=undefined -fno-sanitize-recover=all",
+    "isolated_harness": "manual stand-alone harness using a declaration-compatible mock of dcc_guidance_current; not the complete repository test suite",
+    "repository_full_cmake_ctest": "not executed/confirmed locally in this turn",
+    "github_actions": "no completed run verified",
+    "device_capture": "none",
+    "qnx_abi": "unverified",
+    "vehicle_cluster": "unverified"
+  },
+  "network_and_firmware_actions": 0,
+  "bap_frames_sent": 0,
+  "video_frames_sent": 0,
+  "notes": "No claim that MHI2 iAP2 ingress or VW analogue-cluster BAP output is implemented or compatible. All protocol examples are synthetic."
+}
