@@ -19,7 +19,15 @@ DccResult dcc_harman_analog_project(const DccGuidance *g,
     /* Video remains absent regardless of the evidence profile. */
     value.map_video_supported = 0;
 
-    if (g->revision != 0) {
+    /* A lane-only update (or an unmatched maneuver) must not be mistaken
+     * for a route shown on the analogue cluster. */
+    if (g->revision != 0 &&
+        (g->route_state.present ||
+         g->distance_to_destination_m.present ||
+         g->distance_to_maneuver_m.present ||
+         g->current_index.present ||
+         g->current_road.present ||
+         g->destination.present)) {
         value.status = DCC_ANALOG_ROUTE_DATA;
         value.raw_route_state = g->route_state;
         value.distance_to_destination_m = g->distance_to_destination_m;
