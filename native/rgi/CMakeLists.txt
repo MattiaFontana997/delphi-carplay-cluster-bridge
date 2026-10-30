@@ -25,3 +25,19 @@ if(CMAKE_C_COMPILER_ID MATCHES "GNU|Clang")
   target_compile_options(dcc_guidance_test PRIVATE -Wall -Wextra -Werror)
 endif()
 add_test(NAME offline_guidance_state COMMAND dcc_guidance_test)
+
+
+# Harman-specific offline projection: no vehicle transport or firmware access.
+add_library(dcc_harman STATIC ../harman/src/dcc_harman.c)
+target_include_directories(dcc_harman PUBLIC ../harman/include)
+target_link_libraries(dcc_harman PUBLIC dcc_rgi)
+if(CMAKE_C_COMPILER_ID MATCHES "GNU|Clang")
+  target_compile_options(dcc_harman PRIVATE -Wall -Wextra -Werror)
+endif()
+
+add_executable(dcc_harman_test ../harman/tests/harman_test.c)
+target_link_libraries(dcc_harman_test PRIVATE dcc_harman)
+if(CMAKE_C_COMPILER_ID MATCHES "GNU|Clang")
+  target_compile_options(dcc_harman_test PRIVATE -Wall -Wextra -Werror)
+endif()
+add_test(NAME offline_harman_projection COMMAND dcc_harman_test)
