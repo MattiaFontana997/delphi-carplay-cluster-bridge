@@ -1,0 +1,14 @@
+node_modules/
+local/
+reports/
+*.bin
+*.ifs
+*.mcf
+*.jxe
+*.jar
+*.so
+*.zip
+*.tar
+*.gz
+*.log
+.env*
