@@ -74,8 +74,10 @@ DccResult dcc_identify_prepare(const uint8_t *in,size_t n,const DccIdentifyProfi
     /* Preflight everything before the first write to any caller output. */
     for(pos=6;pos<n;){
         unsigned size,tag;const uint8_t *v;size_t len;DccResult r;
-        if(n-pos<4)return DCC_TLV;size=read16(in+pos);tag=read16(in+pos+2);
-        if(size<4||size>n-pos)return DCC_TLV;v=in+pos+4;len=size-4;
+        if(n-pos<4)return DCC_TLV;
+        size=read16(in+pos);tag=read16(in+pos+2);
+        if(size<4||size>n-pos)return DCC_TLV;
+        v=in+pos+4;len=size-4;
         if(tag==6||tag==7){
             unsigned extra;int *seen=tag==6?&send_seen:&recv_seen;
             if((*seen)++)return DCC_DUPLICATE;
