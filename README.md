@@ -1,4 +1,7 @@
-# Delphi CarPlay Cluster Bridge
+# CarPlay Cluster Bridge — Delphi development branch
+
+> **Branch di sviluppo: Delphi.** Questo ramo riguarda esclusivamente le unità MIB2 Standard Delphi (`MST2_*D`). Il codice attuale è sperimentale e testabile offline; non contiene un ricevitore CarPlay installabile sul veicolo. Vedi [percorso Delphi](docs/targets/delphi.md). Il percorso Harman è sviluppato separatamente nel branch [dev/harman](https://github.com/MattiaFontana997/delphi-carplay-cluster-bridge/tree/dev/harman).
+
 
 An open research project exploring CarPlay navigation integration with Volkswagen MIB2 Delphi head units. Initial offline target: `MST2_EU_VW_P0879D`.
 
