@@ -8,6 +8,10 @@ The [Identify transformer](IDENTIFY.md) prepares component 0x001E and advertised
 
 Input must already be decrypted control frames. No USB transport, authentication, decryption, live interception, BAP translation, stock-navigation arbitration or video output is implemented. Missing fields stay missing. Callbacks borrow data and must copy retained fields, clear caches on RESET and avoid reentrancy. Unknown message families must remain available to the original dispatcher in any future integration.
 
+## Experimental normalized guidance state
+
+The [guidance-state module](GUIDANCE.md) consumes decoded RGI messages on the host and maintains a session-isolated, bounded maneuver cache plus raw distance, ETA and route information. It deliberately does **not** translate to Volkswagen BAP commands, arbitrate native/CarPlay navigation, or access Delphi hardware. The new `offline_guidance_state` CTest suite uses synthetic frames.
+
 ## Build and test
 
 ```sh
