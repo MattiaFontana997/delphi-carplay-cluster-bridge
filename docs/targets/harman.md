@@ -23,3 +23,37 @@ This is the **Harman-only** development track. It shares the host-side C99 iAP2 
 ## Testing
 
 `ctest` on this branch tests the parser, guidance state and **Harman host-only projection** using synthetic data. It cannot prove compatibility with any physical MIB. No radio writes, installable firmware or live iPhone traffic are included.
+
+
+## Explicit analogue-cluster target
+
+The Golf 7.5 instrument part number `5G1 920 741 D` is an **analogue-cluster research target**, not a validated CarPlay target. This track must not require an AID/Virtual Cockpit or assume MOST video for the analogue centre display.
+
+The intended data path is:
+
+```text
+iPhone CarPlay
+    -> MHI2 iAP2 RGI receive adapter [not implemented]
+    -> shared dcc_rgi / dcc_guidance core [offline code]
+    -> dcc_harman_analog_project [host-only code + tests]
+    -> validated VW-specific navigation BAP adapter [not implemented]
+    -> Golf analogue cluster centre display [not validated]
+```
+
+### Proof gates before device integration
+
+1. Observe the **OEM** VW-navigation turn arrows and distance on this actual instrument cluster.
+2. Identify the head-unit's actual MHI2 train and a safe, inspectable iAP2 receive path. Different MHI2Q hook binaries cannot be used.
+3. Confirm that real CarPlay `0x5201` and `0x5202` values can be received and decoded from this firmware, not just replayed from fixtures.
+4. Identify the VW-specific HMI/BAP maneuver and distance API and verify source-ownership/restore behavior. Audi `CombiBAPServiceNavi` on K2161 is an architectural reference, not a VW implementation.
+5. Only after a reversible bench test, evaluate live-cluster output.
+
+Do not turn Apple numeric maneuver codes directly into Volkswagen BAP enum values. Do not infer live support from an analog panel's part number alone. All firmware binaries, driver offsets and stock Java classes must remain out of the public repo.
+
+### Nearby tested projects
+
+- https://github.com/edzenis/mib2high-carplay-altscreen-rgi — **Audi K2161 MHI2 HUD**, RGI to BAP tested on a specific vehicle; no direct VW compatibility.
+- https://github.com/MacsInSpace/mib-cluster-map — VW Harman **digital** cluster map path, not proof for an analog cluster.
+- https://github.com/waterfalldev/mib2q-carplay-enhanced-nonfpk — Audi **MHI2Q** non-FPK path; different head unit platform.
+
+The work in `native/harman` is independent C99 code; no other project's GPL source was copied.
