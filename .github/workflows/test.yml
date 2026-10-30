@@ -13,3 +13,9 @@ jobs:
         with:
           node-version: '22'
       - run: node --test
+
+      - name: Compile and test native C99 modules
+        run: |
+          cmake -S native/rgi -B build/rgi -DCMAKE_BUILD_TYPE=Release
+          cmake --build build/rgi --parallel
+          ctest --test-dir build/rgi --output-on-failure
