@@ -5,7 +5,8 @@
 #define CHECK(x) do{if(!(x)){fprintf(stderr,"FAIL %s:%d %s\n",__FILE__,__LINE__,#x);exit(1);}}while(0)
 static void w16(uint8_t *b,unsigned n){b[0]=(uint8_t)(n>>8);b[1]=(uint8_t)n;}
 static unsigned r16(const uint8_t *b){return ((unsigned)b[0]<<8)|b[1];}
-static void add(uint8_t *b,size_t *n,unsigned id,const void *v,size_t len){w16(b+*n,(unsigned)len+4);w16(b+*n+2,id);if(len)memcpy(b+*n+4,v,len);*n+=len+4;}
+static void add(uint8_t *b,size_t *n,unsigned id,const void *v,size_t len){w16(b+*n,(unsigned)len+4);w16(b+*n+2,id);if(len)memcpy(b+*n+4,v,len);
+    *n+=len+4;}
 static const uint8_t *find(const uint8_t *b,size_t n,unsigned id,size_t *len){size_t p=6;while(p<n){unsigned size=r16(b+p);CHECK(size>=4&&size<=n-p);if(r16(b+p+2)==id){*len=size-4;return b+p+4;}p+=size;}return NULL;}
 static int list_has(const uint8_t *v,size_t n,unsigned id){size_t p;for(p=0;p<n;p+=2)if(r16(v+p)==id)return 1;return 0;}
 static DccIdentifyProfile profile(void){DccIdentifyProfile p={0x2222,"Delphi RGI",10,63,62,61,60,6,59,6};return p;}
