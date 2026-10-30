@@ -34,6 +34,13 @@ static void analog_test(void) {
     CHECK(view.status==DCC_ANALOG_EMPTY&&view.epoch==9);
     CHECK(!view.map_video_supported&&!view.has_current_maneuver);
 
+    /* A lane-only frame must not synthesize an active route. */
+    n=frame(bytes,0x5204);
+    add(bytes,&n,1,index,2);
+    apply(&g,bytes,n);
+    CHECK(dcc_harman_analog_project(&g,&evidence,&view)==DCC_OK);
+    CHECK(view.status==DCC_ANALOG_EMPTY);
+
     n=frame(bytes,0x5201);
     add(bytes,&n,13,index,2);
     add(bytes,&n,10,distance,4);
