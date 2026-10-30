@@ -1,4 +1,7 @@
-# Delphi CarPlay Cluster Bridge
+# CarPlay Cluster Bridge — Harman development branch
+
+> **Branch di sviluppo: Harman.** Questo ramo riguarda il Discover Pro Harman (`MHI2` / `MHI2Q` come sottovarianti da verificare), incluso il progetto di ricerca per l'unità `5NA 035 020 D`. Il codice `native/harman` è un adattatore **solo offline**, non una patch installabile. Vedi [percorso Harman](docs/targets/harman.md). Il branch [dev/delphi](https://github.com/MattiaFontana997/delphi-carplay-cluster-bridge/tree/dev/delphi) contiene il lavoro Delphi. Le sezioni di ricerca Delphi riportate qui sotto rimangono per riferimento storico e non dimostrano compatibilità Harman.
+
 
 An open research project exploring CarPlay navigation integration with Volkswagen MIB2 Delphi head units. Initial offline target: `MST2_EU_VW_P0879D`.
 
