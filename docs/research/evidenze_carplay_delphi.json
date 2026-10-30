@@ -1,0 +1,474 @@
+{
+  "target": "MST2_EU_VW_P0879D / STD2Nav_EU_VW",
+  "mode": "static offline; no radio reads/writes, no firmware execution",
+  "date": "2026-10-30",
+  "javaConversion": {
+    "MIBHMI": {
+      "classesWritten": 19403,
+      "zipCRCsPassed": true,
+      "converterSkippedClasses": 0,
+      "caveat": "Conversion for static analysis only; not JVM verifier/decompiler correctness or hardware validation."
+    },
+    "delphi": {
+      "classesWritten": 5332,
+      "zipCRCsPassed": true,
+      "converterSkippedClasses": 0,
+      "caveat": "Conversion for static analysis only; not JVM verifier/decompiler correctness or hardware validation."
+    }
+  },
+  "interfaceCrossChecks": {
+    "org/dsi/ifc/carplay/DSICarplay.class": {
+      "methodSignaturesMatchStockDsiJar": true
+    },
+    "org/dsi/ifc/carplay/DSICarplayListener.class": {
+      "methodSignaturesMatchStockDsiJar": true
+    }
+  },
+  "carplayInterface": {
+    "org/dsi/ifc/carplay/DSICarplay.class": [
+      {
+        "name": "startService",
+        "descriptor": "(Lorg/dsi/ifc/carplay/ServiceConfiguration;)V",
+        "flags": 1025
+      },
+      {
+        "name": "postButtonEvent",
+        "descriptor": "(II)V",
+        "flags": 1025
+      },
+      {
+        "name": "postTouchEvent",
+        "descriptor": "(II[Lorg/dsi/ifc/carplay/TouchEvent;)V",
+        "flags": 1025
+      },
+      {
+        "name": "postRotaryEvent",
+        "descriptor": "(I)V",
+        "flags": 1025
+      },
+      {
+        "name": "postCharacterEvent",
+        "descriptor": "(I[Ljava/lang/String;)V",
+        "flags": 1025
+      },
+      {
+        "name": "requestModeChange",
+        "descriptor": "([Lorg/dsi/ifc/carplay/ResourceRequest;[Lorg/dsi/ifc/carplay/AppStateRequest;Ljava/lang/String;)V",
+        "flags": 1025
+      },
+      {
+        "name": "responseUpdateMode",
+        "descriptor": "([Lorg/dsi/ifc/carplay/Resource;[Lorg/dsi/ifc/carplay/AppState;)V",
+        "flags": 1025
+      },
+      {
+        "name": "responseBTDeactivation",
+        "descriptor": "()V",
+        "flags": 1025
+      },
+      {
+        "name": "requestUI",
+        "descriptor": "(I)V",
+        "flags": 1025
+      },
+      {
+        "name": "requestNightMode",
+        "descriptor": "(Z)V",
+        "flags": 1025
+      },
+      {
+        "name": "requestSIRIAction",
+        "descriptor": "(I)V",
+        "flags": 1025
+      },
+      {
+        "name": "responseUpdateMainAudioType",
+        "descriptor": "(I)V",
+        "flags": 1025
+      },
+      {
+        "name": "requestUI2",
+        "descriptor": "(Ljava/lang/String;)V",
+        "flags": 1025
+      }
+    ],
+    "org/dsi/ifc/carplay/DSICarplayListener.class": [
+      {
+        "name": "updateMode",
+        "descriptor": "([Lorg/dsi/ifc/carplay/Resource;[Lorg/dsi/ifc/carplay/AppState;I)V",
+        "flags": 1025
+      },
+      {
+        "name": "responseModeChange",
+        "descriptor": "([Lorg/dsi/ifc/carplay/Resource;[Lorg/dsi/ifc/carplay/AppState;I)V",
+        "flags": 1025
+      },
+      {
+        "name": "requestBTDeactivation",
+        "descriptor": "(Ljava/lang/String;I)V",
+        "flags": 1025
+      },
+      {
+        "name": "updateDeviceInfo",
+        "descriptor": "(Lorg/dsi/ifc/carplay/DeviceInfo;I)V",
+        "flags": 1025
+      },
+      {
+        "name": "updateCallState",
+        "descriptor": "([Lorg/dsi/ifc/carplay/CallState;I)V",
+        "flags": 1025
+      },
+      {
+        "name": "updateTelephonyState",
+        "descriptor": "(Lorg/dsi/ifc/carplay/TelephonyState;I)V",
+        "flags": 1025
+      },
+      {
+        "name": "updateNowPlayingData",
+        "descriptor": "(Lorg/dsi/ifc/carplay/TrackData;I)V",
+        "flags": 1025
+      },
+      {
+        "name": "updatePlaybackState",
+        "descriptor": "(Lorg/dsi/ifc/carplay/PlaybackInfo;I)V",
+        "flags": 1025
+      },
+      {
+        "name": "updatePlayposition",
+        "descriptor": "(II)V",
+        "flags": 1025
+      },
+      {
+        "name": "updateCoverArtUrl",
+        "descriptor": "(Lorg/dsi/ifc/global/ResourceLocator;I)V",
+        "flags": 1025
+      },
+      {
+        "name": "updateTextInputState",
+        "descriptor": "(II)V",
+        "flags": 1025
+      },
+      {
+        "name": "duckAudio",
+        "descriptor": "(ID)V",
+        "flags": 1025
+      },
+      {
+        "name": "unduckAudio",
+        "descriptor": "(I)V",
+        "flags": 1025
+      },
+      {
+        "name": "oemAppSelected",
+        "descriptor": "()V",
+        "flags": 1025
+      },
+      {
+        "name": "updateMainAudioType",
+        "descriptor": "(II)V",
+        "flags": 1025
+      }
+    ]
+  },
+  "navigationBapApi": [
+    {
+      "name": "updateBapCompassInfo",
+      "descriptor": "(II)V",
+      "flags": 1025
+    },
+    {
+      "name": "updateBapDistanceToDestination",
+      "descriptor": "(II)V",
+      "flags": 1025
+    },
+    {
+      "name": "updateBapDistanceToDestination",
+      "descriptor": "(IIZ)V",
+      "flags": 1025
+    },
+    {
+      "name": "updateBapDistanceToNextManeuver",
+      "descriptor": "(IIZI)V",
+      "flags": 1025
+    },
+    {
+      "name": "updateBapTimeToDestination",
+      "descriptor": "(IIJ)V",
+      "flags": 1025
+    },
+    {
+      "name": "updateBapTimeToDestinationRTT",
+      "descriptor": "(J)V",
+      "flags": 1025
+    },
+    {
+      "name": "updateBapTimeToDestinationRTTandETA",
+      "descriptor": "(JJ)V",
+      "flags": 1025
+    },
+    {
+      "name": "updateBapTimeToDestination2",
+      "descriptor": "(III)V",
+      "flags": 1025
+    },
+    {
+      "name": "updateBapTurnToInfo",
+      "descriptor": "(Ljava/lang/String;Ljava/lang/String;)V",
+      "flags": 1025
+    },
+    {
+      "name": "updateBapTurnToInfo",
+      "descriptor": "([Lde/vw/mib/asl/api/navbap/IBapTurnToInfoNavBap;)V",
+      "flags": 1025
+    },
+    {
+      "name": "updateBapTMCInfo",
+      "descriptor": "(Lorg/dsi/ifc/tmc/TmcMessage;)V",
+      "flags": 1025
+    },
+    {
+      "name": "updateBapAltitudeCollector",
+      "descriptor": "(II)V",
+      "flags": 1025
+    },
+    {
+      "name": "navBookInit",
+      "descriptor": "(Lde/vw/mib/asl/internal/list/ASLListElementFetcher;I)V",
+      "flags": 1025
+    },
+    {
+      "name": "navBookUpdate",
+      "descriptor": "(I[Lorg/dsi/ifc/organizer/DataSet;I)V",
+      "flags": 1025
+    },
+    {
+      "name": "favoriteDestinationInit",
+      "descriptor": "(Lde/vw/mib/asl/internal/list/ASLListElementFetcher;I)V",
+      "flags": 1025
+    },
+    {
+      "name": "favoriteDestinationUpdate",
+      "descriptor": "(I[Lorg/dsi/ifc/organizer/DataSet;I)V",
+      "flags": 1025
+    },
+    {
+      "name": "navBookSpellerResult",
+      "descriptor": "(II[Lorg/dsi/ifc/organizer/DataSet;ILjava/lang/String;Ljava/lang/String;)V",
+      "flags": 1025
+    },
+    {
+      "name": "addrListUpdate",
+      "descriptor": "([Lorg/dsi/ifc/organizer/AdbEntry;)V",
+      "flags": 1025
+    },
+    {
+      "name": "createDetailListCollector",
+      "descriptor": "(Lde/vw/mib/asl/api/navbap/ILocationAccessorNavBap;Ljava/lang/String;)Ljava/lang/Object;",
+      "flags": 1025
+    },
+    {
+      "name": "updateRgCurrentRoute",
+      "descriptor": "(Lde/vw/mib/asl/api/navbap/IRouteNavBap;Lde/vw/mib/asl/api/navbap/ILocationAccessorNavBap;)V",
+      "flags": 1025
+    },
+    {
+      "name": "lastDestListUpdate",
+      "descriptor": "([Lde/vw/mib/asl/api/navbap/ILDListElementNavBap;)V",
+      "flags": 1025
+    },
+    {
+      "name": "updateBapLaneGuidance",
+      "descriptor": "([Lde/vw/mib/asl/api/navbap/INavLaneGuidanceDataNavBap;Z)V",
+      "flags": 1025
+    },
+    {
+      "name": "updateMapsScale",
+      "descriptor": "(II)V",
+      "flags": 1025
+    },
+    {
+      "name": "updateMapsScale",
+      "descriptor": "(III)V",
+      "flags": 1025
+    }
+  ],
+  "nativeVideoGate": {
+    "component": "lib/libAirPlay.so",
+    "function": "AirPlayReceiverSessionSetup",
+    "comparisonVirtualAddresses": [
+      "0x16e70",
+      "0x16e7c",
+      "0x16e84"
+    ],
+    "handledStreamTypes": [
+      100,
+      101,
+      110
+    ],
+    "otherTypeBranch": "0x1781c",
+    "type111HandledByThisDispatch": false,
+    "evidence": "ARM disassembly; unknown types enter unsupported-stream logging/skip branch, not proven behavior of every alternate code path"
+  },
+  "versionComparison": [
+    {
+      "component": "bin/CarPlay",
+      "originalBytes": 644087,
+      "p0891Bytes": 644087,
+      "byteIdentical": false,
+      "p0879SHA256": "7a80632c766769f1cb635d805aac3a7543d301f8bdf6d4e37c2ee71d608c54c0",
+      "p0891SHA256": "6ff4706a44d2d0ec11c7940c7fa72b57f8e946d682740eee7e4f3c6a6dd7e807"
+    },
+    {
+      "component": "bin/CarPlayServices",
+      "originalBytes": 371199,
+      "p0891Bytes": 371199,
+      "byteIdentical": false,
+      "p0879SHA256": "cfdd1c616c89fe73837900d1c68facaad40f15a05a0e490f3bc3ce6a94c600fe",
+      "p0891SHA256": "d6932cc85a3113f984120ba4e4cbfa5c699b4ef148d6e0117e73dc2fe3c5ac56"
+    },
+    {
+      "component": "bin/ClusterServices",
+      "originalBytes": 694751,
+      "p0891Bytes": 694751,
+      "byteIdentical": false,
+      "p0879SHA256": "66bce7f5966eebe7f2e8e2e64e2d7dae84c3fb5492ed3499b2d772c50108c549",
+      "p0891SHA256": "0e4d4d698ef0b6e7e13b8c640482b5c2b8cc05a40fe1f8727b6752507fe094ff"
+    },
+    {
+      "component": "bin/Most",
+      "originalBytes": 1346199,
+      "p0891Bytes": 1346199,
+      "byteIdentical": false,
+      "p0879SHA256": "e63919fc54a71b0a4fe2e550a773b38c061cd73589523c630b4b248bf6e63f94",
+      "p0891SHA256": "07f25452602ec3588590ddec57e18111802c9b9e57faf3469dcc423ddb2b0c29"
+    },
+    {
+      "component": "bin/vwjxe.ifs",
+      "originalBytes": 19406432,
+      "p0891Bytes": 19405652,
+      "byteIdentical": false,
+      "p0879SHA256": "4ced7bd12c4f684093f64549361c02bf86e42404401e3d9a515e7bc18bc4066b",
+      "p0891SHA256": "d95acbdbda48de72a7816809047652e2e0eacdf099a858a9949bd264bf65455f"
+    },
+    {
+      "component": "lib/libAirPlay.so",
+      "originalBytes": 160384,
+      "p0891Bytes": 160384,
+      "byteIdentical": true,
+      "p0879SHA256": "ff1f00e43394c451c8578e4f7e237d0a58ebe9916a8d7b3e25e6132ff8392791",
+      "p0891SHA256": "ff1f00e43394c451c8578e4f7e237d0a58ebe9916a8d7b3e25e6132ff8392791"
+    },
+    {
+      "component": "lib/libAirPlaySupport.so",
+      "originalBytes": 671036,
+      "p0891Bytes": 671036,
+      "byteIdentical": true,
+      "p0879SHA256": "464877138ba69efe1e4c0818bcdf508717a8c07d5b8d022abad2d094f0acea82",
+      "p0891SHA256": "464877138ba69efe1e4c0818bcdf508717a8c07d5b8d022abad2d094f0acea82"
+    },
+    {
+      "component": "lib/libScreenStream.so",
+      "originalBytes": 48955,
+      "p0891Bytes": 48955,
+      "byteIdentical": false,
+      "p0879SHA256": "8ade6d6f458c1e1fa99caa508b7fcfe6df0177f639d67a58f4293a5583c3c769",
+      "p0891SHA256": "1240b2fbb10da5addb8b889315fef0434084434ba7fb8fecba2f336ad1585d66"
+    },
+    {
+      "component": "lib/ipod-drvr-iap2.so",
+      "originalBytes": 783734,
+      "p0891Bytes": 783734,
+      "byteIdentical": true,
+      "p0879SHA256": "2cc1439bd71d3a394291915a8c324d87ce34e985b9be69237ed6905e64394425",
+      "p0891SHA256": "2cc1439bd71d3a394291915a8c324d87ce34e985b9be69237ed6905e64394425"
+    },
+    {
+      "component": "cfg/iap2.cfg",
+      "originalBytes": 6886,
+      "p0891Bytes": 6886,
+      "byteIdentical": true,
+      "p0879SHA256": "8d881170f61f520d92108c75df5d07ffe494255716fd899efb7ec7c6c0b4af26",
+      "p0891SHA256": "8d881170f61f520d92108c75df5d07ffe494255716fd899efb7ec7c6c0b4af26"
+    },
+    {
+      "component": "jar/dsiifc.jar",
+      "originalBytes": 1184373,
+      "p0891Bytes": 1184373,
+      "byteIdentical": true,
+      "p0879SHA256": "6a18114142295fe2bd7cf0b739f40e9ce082bbbaa272eb35e2bea02d4bf92341",
+      "p0891SHA256": "6a18114142295fe2bd7cf0b739f40e9ce082bbbaa272eb35e2bea02d4bf92341"
+    },
+    {
+      "component": "jar/jdsi.jar",
+      "originalBytes": 3317543,
+      "p0891Bytes": 3317543,
+      "byteIdentical": false,
+      "p0879SHA256": "07131dffe1733f228b927a2ae30d83e50d9101a83ec53a69c5fb953a766fd2e8",
+      "p0891SHA256": "efb7cc05bf65c8a559c6530893ee1fd345d8df8f497d48c73dc3777c25ff9544"
+    }
+  ],
+  "unknowns": [
+    "actual receipt of CarPlay RGI messages",
+    "Delphi iAP2 route-guidance feature negotiation and message dispatch",
+    "working RGI event injection with ownership arbitration",
+    "auxiliary map stream negotiation/receiver/cluster routing",
+    "installed cluster capabilities",
+    "exact installed NavIgnore variant and class overlap"
+  ],
+  "bytecodeLinks": {
+    "de/vw/mib/asl/internal/navigation/bap/HsmTargetBap.class": {
+      "updateManeuverDescriptor": [
+        {
+          "offset": 240,
+          "op": "invokestatic",
+          "target": "generated/de/vw/mib/asl/internal/ListManager.getGenericASLList.(I)Lde/vw/mib/asl/internal/list/impl/GenericASLList;"
+        },
+        {
+          "offset": 252,
+          "op": "invokestatic",
+          "target": "generated/de/vw/mib/asl/internal/ListManager.getGenericASLList.(I)Lde/vw/mib/asl/internal/list/impl/GenericASLList;"
+        }
+      ],
+      "dsiNavigationUpdateDistanceToNextManeuver": [
+        {
+          "offset": 2,
+          "op": "invokestatic",
+          "target": "de/vw/mib/asl/api/navbap/ASLNavBAPFactory.getNavBAPApi.()Lde/vw/mib/asl/api/navbap/ASLNavBAPAPI;"
+        },
+        {
+          "offset": 26,
+          "op": "invokeinterface",
+          "target": "de/vw/mib/asl/api/navbap/ASLNavBAPAPI.updateBapDistanceToNextManeuver.(IIZI)V"
+        }
+      ]
+    },
+    "de/vw/mib/asl/internal/carplay/common/NavigationHandler.class": {
+      "updateGuidanceActive": [
+        {
+          "offset": 72,
+          "op": "invokeinterface",
+          "target": "org/dsi/ifc/carplay/DSICarplay.requestModeChange.([Lorg/dsi/ifc/carplay/ResourceRequest;[Lorg/dsi/ifc/carplay/AppStateRequest;Ljava/lang/String;)V"
+        },
+        {
+          "offset": 163,
+          "op": "invokeinterface",
+          "target": "org/dsi/ifc/carplay/DSICarplay.requestModeChange.([Lorg/dsi/ifc/carplay/ResourceRequest;[Lorg/dsi/ifc/carplay/AppStateRequest;Ljava/lang/String;)V"
+        },
+        {
+          "offset": 173,
+          "op": "invokevirtual",
+          "target": "de/vw/mib/asl/internal/carplay/common/CarPlayGlobalProperies.setHmiRouteGuidanceActive.(Z)V"
+        }
+      ]
+    },
+    "de/vw/mib/asl/internal/navbap/api/impl/ASLNavBAPAPIImpl.class": {
+      "updateBapDistanceToNextManeuver": [
+        {
+          "offset": 110,
+          "op": "invokestatic",
+          "target": "generated/de/vw/mib/asl/internal/ListManager.getGenericASLList.(I)Lde/vw/mib/asl/internal/list/impl/GenericASLList;"
+        }
+      ]
+    }
+  }
+}

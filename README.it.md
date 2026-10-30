@@ -4,6 +4,14 @@ Progetto aperto di ricerca per portare indicazioni CarPlay e, sui quadri compati
 
 **Non è ancora una patch funzionante.** Questa versione contiene documentazione e un analizzatore offline. Non include installer, modifiche alla radio, decodifica RGI o un ponte video operativo.
 
+## Aggiornamento 0.0.3
+
+La nuova versione integra i risultati dell'analisi statica: individuato un candidato per l'uscita delle indicazioni HMI/BAP, esaminate le interfacce Java CarPlay e rilevato un limite nella gestione dello stream video aggiuntivo. Include anche il confronto dei componenti rilevanti con P0891D.
+
+L'ingresso reale degli eventi RGI resta da identificare. **Non è ancora una versione installabile sulla radio**; il codice dell'analizzatore offline è invariato.
+
+[Rapporto completo](docs/research/2026-10-30-delphi-carplay.it.md) · [Evidenze tecniche](docs/research/evidenze_carplay_delphi.json) · [Novità delle versioni](CHANGELOG.md)
+
 ## Due obiettivi distinti
 
 1. Frecce, distanze e altre indicazioni disponibili su quadri analogici o VC che le supportano.

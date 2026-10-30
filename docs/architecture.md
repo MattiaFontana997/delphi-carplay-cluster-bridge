@@ -1,12 +1,12 @@
 # Proposed architecture
 
-All interfaces below are proposals, not implemented Delphi APIs. Reusing the OEM navigation path alongside CarPlay may require compatible NavIgnore or equivalent ownership handling; see [scope and credits](navignore.md). Standalone patch coexistence with RGI/video remains unverified.
+This is a proposed bridge, not an implemented integration. Static research has identified existing ASLNavBAPAPI/HMI output candidates; the input adapter and runtime suitability remain unverified. Reusing the OEM navigation path alongside CarPlay may require compatible NavIgnore or equivalent ownership handling; see [scope and credits](navignore.md). Standalone patch coexistence with RGI/video remains unverified.
 
 ```mermaid
 flowchart LR
     CP[CarPlay session] --> IN[Delphi input adapter: unknown]
     IN --> EV[Normalized guidance events]
-    EV --> OUT[Native guidance output adapter: unknown]
+    EV --> OUT[HMI/BAP output candidate: identified, not integrated]
     OUT --> CL[Compatible analog cluster or VC]
     CP --> AUX[Auxiliary map stream: unverified]
     AUX --> VIDEO[Delphi decode and cluster-video path: unverified]

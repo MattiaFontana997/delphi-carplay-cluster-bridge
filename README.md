@@ -4,7 +4,7 @@ An open research project exploring CarPlay navigation integration with Volkswage
 
 **Research scaffold, not a working CarPlay patch.** No device installer, firmware writer, on-device agent, RGI decoder or cluster video bridge is included.
 
-[Italiano](README.it.md) · [Findings](docs/findings.md) · [Architecture](docs/architecture.md) · [Roadmap](docs/roadmap.md) · [Contributing](CONTRIBUTING.md)
+[Italiano](README.it.md) · [Findings](docs/findings.md) · [Architecture](docs/architecture.md) · [Roadmap](docs/roadmap.md) · [Contributing](CONTRIBUTING.md) · [Changelog](CHANGELOG.md)
 
 ## Goals
 
@@ -16,7 +16,9 @@ An open research project exploring CarPlay navigation integration with Volkswage
 
 An offline analyzer inventories a local GZIP/TAR `EXTBIN_APPS.bin`, hashes every TAR entry, and inspects selected ELF headers and diagnostic strings. It does not extract files or execute firmware. It reads the entire stream so GZIP integrity errors are surfaced. Reports omit the input's local filesystem path.
 
-Observed P0879D components include `CarPlay`, `CarPlayServices`, `ClusterServices`, `Most`, and `libScreenStream.so`. These are starting points for research, not proof that the requested bridge can be implemented.
+Version **0.0.3** adds static research results: an HMI/BAP guidance-output candidate, the limits of the Java CarPlay interfaces, and a video stream-type gate in the original AirPlay library. Selected components were also compared with P0891D. See the [evidence ledger](docs/findings.md), [full Italian research report](docs/research/2026-10-30-delphi-carplay.it.md) and [structured evidence](docs/research/evidenze_carplay_delphi.json).
+
+The CarPlay RGI input remains unidentified. No live bridge or new device-facing functionality is implemented in this release. Offline tools are unchanged from 0.0.2.
 
 ## NavIgnore / NavActiveIgnore
 

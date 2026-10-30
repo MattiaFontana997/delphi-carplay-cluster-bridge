@@ -1,5 +1,15 @@
 # Initial contributor backlog
 
+## Research status in 0.0.3
+
+- Completed: reproducible archive inventory and initial static evidence ledger.
+- Identified: HMI/BAP guidance-output candidates and selected native-to-HMI update calls. Runtime integration remains open.
+- Identified: unsupported stream-111 branch in the examined original AirPlay setup dispatch.
+- Completed: SHA-256 comparison of selected P0879D/P0891D components.
+- Still open: actual CarPlay RGI ingress, event translation, ownership arbitration, video implementation and hardware capability validation.
+
+Next priority: trace iAP2 feature negotiation/message dispatch to establish a real RGI source. Do not substitute a synthetic arrow demo for this missing link.
+
 ## 1. Map the CarPlay input interface
 
 Inspect original local CarPlay/CarPlayServices components and relevant HMI interfaces. Deliver a sanitized evidence table of actual route-guidance callbacks/data structures, including what remains unknown. Do not treat a generic screen or media callback as an RGI callback.
