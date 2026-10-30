@@ -2,9 +2,19 @@
 
 Progetto aperto di ricerca per portare indicazioni CarPlay e, sui quadri compatibili, mappe CarPlay sulle unità MIB2 Delphi. Primo firmware studiato offline: `MST2_EU_VW_P0879D`.
 
-**Non è ancora una patch funzionante.** Questa versione contiene documentazione e un analizzatore offline. Non include installer, modifiche alla radio, decodifica RGI o un ponte video operativo.
+**Non è ancora una patch funzionante sulla radio.** Include documentazione, analizzatore offline e un nucleo C99 per decodifica RGI e preparazione Identify. Non include installer, ricevitore Delphi operativo o un ponte video.
 
-## Aggiornamento 0.0.3
+## Versione 0.1.0 sperimentale
+
+Primo rilascio del [codice C e dei test](native/rgi/README.md): decoder, gestione delle sessioni e preparazione in memoria del componente Identify RGI. Il collegamento al mittente originale Delphi e l'accettazione dell'iPhone restano da verificare. Le capacità dichiarate nei test sono sintetiche, non capacità hardware certificate.
+
+## Aggiornamento 0.0.4
+
+Ricostruiti offline i builder Identify, la gestione destinazioni e il dispatcher controllo iAP2. Nel ramo ricostruito i messaggi RGI in ingresso non hanno un gestore dedicato. Trovati anche l'estensione delle liste dei messaggi dichiarati e il collegamento client/driver per l'invio grezzo: sono candidati di sviluppo, non un ricevitore già operativo.
+
+[Rapporto iAP2](docs/research/2026-10-30-iap2.it.md) · [Evidenze iAP2](docs/research/evidenze_iap2_delphi.json)
+
+## Risultati della 0.0.3
 
 La nuova versione integra i risultati dell'analisi statica: individuato un candidato per l'uscita delle indicazioni HMI/BAP, esaminate le interfacce Java CarPlay e rilevato un limite nella gestione dello stream video aggiuntivo. Include anche il confronto dei componenti rilevanti con P0891D.
 

@@ -1,0 +1,428 @@
+{
+  "target": "MST2_EU_VW_P0879D / STD2Nav_EU_VW",
+  "date": "2026-10-30",
+  "scope": "Bounded static reconstruction, not on-device or iPhone validation. No firmware executed.",
+  "inputComponents": [
+    {
+      "path": "extbin/apps.tmp/lib/ipod-drvr-iap2.so",
+      "bytes": 783734,
+      "sha256": "2cc1439bd71d3a394291915a8c324d87ce34e985b9be69237ed6905e64394425"
+    },
+    {
+      "path": "extbin/apps.tmp/lib/libiap2client.so",
+      "bytes": 22960,
+      "sha256": "97854159b74cd401c5faa7e413635693bee0a8c94b6d9183abfdb9d3779004b9"
+    }
+  ],
+  "identification": {
+    "senderFunction": "ident_info_request",
+    "address": "0x10ca4",
+    "messageId": "0x1d01",
+    "builderTable": "ident_info_funcs",
+    "builderCount": 24,
+    "builders": [
+      {
+        "parameter": "0x0",
+        "function": "ident_info_add_name"
+      },
+      {
+        "parameter": "0x1",
+        "function": "ident_info_add_model"
+      },
+      {
+        "parameter": "0x2",
+        "function": "ident_info_add_mfg"
+      },
+      {
+        "parameter": "0x3",
+        "function": "ident_info_add_serno"
+      },
+      {
+        "parameter": "0x4",
+        "function": "ident_info_add_fwver"
+      },
+      {
+        "parameter": "0x5",
+        "function": "ident_info_add_hwver"
+      },
+      {
+        "parameter": "0x6",
+        "function": "ident_info_sendmsgs"
+      },
+      {
+        "parameter": "0x7",
+        "function": "ident_info_recvmsgs"
+      },
+      {
+        "parameter": "0x8",
+        "function": "ident_info_power"
+      },
+      {
+        "parameter": "0x9",
+        "function": "ident_info_current"
+      },
+      {
+        "parameter": "0xa",
+        "function": "ident_info_eap"
+      },
+      {
+        "parameter": "0xb",
+        "function": "ident_info_bundleid"
+      },
+      {
+        "parameter": "0xc",
+        "function": "ident_info_curlang"
+      },
+      {
+        "parameter": "0xd",
+        "function": "ident_info_suplang"
+      },
+      {
+        "parameter": "0xe",
+        "function": "ident_info_tspserial"
+      },
+      {
+        "parameter": "0xf",
+        "function": "ident_info_tspusbdev"
+      },
+      {
+        "parameter": "0x10",
+        "function": "ident_info_tspusbhost"
+      },
+      {
+        "parameter": "0x11",
+        "function": "ident_info_tspbt"
+      },
+      {
+        "parameter": "0x12",
+        "function": "ident_info_hidcomp"
+      },
+      {
+        "parameter": "0x17",
+        "function": "ident_info_hidhostcomp"
+      },
+      {
+        "parameter": "0x14",
+        "function": "ident_info_vehinfocomp"
+      },
+      {
+        "parameter": "0x15",
+        "function": "ident_info_vehstatuscomp"
+      },
+      {
+        "parameter": "0x16",
+        "function": "ident_info_gpscomp"
+      },
+      {
+        "parameter": "0x18",
+        "function": "ident_info_tspwifi"
+      }
+    ],
+    "dedicatedRouteGuidanceBuilderFound": false,
+    "routeGuidanceComponentIdFromUpstreamReference": "0x001e",
+    "extraMessageIds": {
+      "section": "ident",
+      "sendKey": "sendmsgs",
+      "recvKey": "recvmsgs",
+      "behavior": "Append configured uint16 IDs to the advertised lists, subject to existing bounds. Does not install receiver handlers or add an RGI component builder."
+    },
+    "stockCfgContainsIdentSection": false,
+    "stockCfgContainsDestinationSection": false
+  },
+  "destination": {
+    "startId": "0x10da",
+    "dataId": "0x10db",
+    "stopId": "0x10dc",
+    "statusId": "0x10dd",
+    "receiver": "destination_info_recv",
+    "fields": [
+      "UniqueIdentifier",
+      "DisplayName",
+      "CenterCoordinate",
+      "Address",
+      "EntryPoint",
+      "CoordinateThreshold",
+      "Locale"
+    ],
+    "isManeuverStream": false,
+    "startCondition": "feature bit 0x20000 in iap2_start_features; set from destination enable handling in init_features"
+  },
+  "receiveDispatch": {
+    "scope": "Pure Python reconstruction of a bounded ARM compare/branch tree; does not execute ARM code or model transport/session runtime.",
+    "entry": "0x166cc",
+    "defaultBlock": "0x16ba8",
+    "idsEvaluated": 65536,
+    "defaultIdCount": 65505,
+    "recognizedCases": [
+      {
+        "message": "0x10db",
+        "handlerBlock": "0x16b98"
+      },
+      {
+        "message": "0x1d00",
+        "handlerBlock": "0x16948"
+      },
+      {
+        "message": "0x1d02",
+        "handlerBlock": "0x16954"
+      },
+      {
+        "message": "0x1d03",
+        "handlerBlock": "0x169b0"
+      },
+      {
+        "message": "0x4155",
+        "handlerBlock": "0x16aa8"
+      },
+      {
+        "message": "0x4158",
+        "handlerBlock": "0x16abc"
+      },
+      {
+        "message": "0x4171",
+        "handlerBlock": "0x16ad0"
+      },
+      {
+        "message": "0x4c01",
+        "handlerBlock": "0x16a24"
+      },
+      {
+        "message": "0x4c04",
+        "handlerBlock": "0x16a38"
+      },
+      {
+        "message": "0x4e04",
+        "handlerBlock": "0x16b70"
+      },
+      {
+        "message": "0x4e09",
+        "handlerBlock": "0x16b0c"
+      },
+      {
+        "message": "0x4e0a",
+        "handlerBlock": "0x16b20"
+      },
+      {
+        "message": "0x4e0b",
+        "handlerBlock": "0x16b34"
+      },
+      {
+        "message": "0x4e0c",
+        "handlerBlock": "0x16b48"
+      },
+      {
+        "message": "0x4e0d",
+        "handlerBlock": "0x16b5c"
+      },
+      {
+        "message": "0x5001",
+        "handlerBlock": "0x16a10"
+      },
+      {
+        "message": "0x5702",
+        "handlerBlock": "0x16b84"
+      },
+      {
+        "message": "0xa100",
+        "handlerBlock": "0x16ae4"
+      },
+      {
+        "message": "0xa102",
+        "handlerBlock": "0x16af8"
+      },
+      {
+        "message": "0xaa00",
+        "handlerBlock": "0x16890"
+      },
+      {
+        "message": "0xaa02",
+        "handlerBlock": "0x16934"
+      },
+      {
+        "message": "0xaa04",
+        "handlerBlock": "0x16920"
+      },
+      {
+        "message": "0xaa05",
+        "handlerBlock": "0x168b4"
+      },
+      {
+        "message": "0xaa11",
+        "handlerBlock": "0x16868"
+      },
+      {
+        "message": "0xaa13",
+        "handlerBlock": "0x1687c"
+      },
+      {
+        "message": "0xae01",
+        "handlerBlock": "0x16a4c"
+      },
+      {
+        "message": "0xda01",
+        "handlerBlock": "0x169fc"
+      },
+      {
+        "message": "0xea00",
+        "handlerBlock": "0x16a80"
+      },
+      {
+        "message": "0xea01",
+        "handlerBlock": "0x16a94"
+      },
+      {
+        "message": "0xfffa",
+        "handlerBlock": "0x16a60"
+      },
+      {
+        "message": "0xfffc",
+        "handlerBlock": "0x16a74"
+      }
+    ],
+    "rgiResults": [
+      {
+        "message": "0x5200",
+        "handlerBlock": "0x16ba8",
+        "comparisonTrace": [
+          "0x166cc",
+          "0x166d0",
+          "0x166d4",
+          "0x166d8",
+          "0x167a4",
+          "0x167a8",
+          "0x167ac",
+          "0x167b0",
+          "0x167b4",
+          "0x167b8",
+          "0x167bc",
+          "0x167c0",
+          "0x167c4",
+          "0x167c8",
+          "0x167cc",
+          "0x167d0",
+          "0x167d4",
+          "0x167d8",
+          "0x167dc"
+        ]
+      },
+      {
+        "message": "0x5201",
+        "handlerBlock": "0x16ba8",
+        "comparisonTrace": [
+          "0x166cc",
+          "0x166d0",
+          "0x166d4",
+          "0x166d8",
+          "0x167a4",
+          "0x167a8",
+          "0x167ac",
+          "0x167b0",
+          "0x167b4",
+          "0x167b8",
+          "0x167bc",
+          "0x167c0",
+          "0x167c4",
+          "0x167c8",
+          "0x167cc",
+          "0x167d0",
+          "0x167d4",
+          "0x167d8",
+          "0x167dc"
+        ]
+      },
+      {
+        "message": "0x5202",
+        "handlerBlock": "0x16ba8",
+        "comparisonTrace": [
+          "0x166cc",
+          "0x166d0",
+          "0x166d4",
+          "0x166d8",
+          "0x167a4",
+          "0x167a8",
+          "0x167ac",
+          "0x167b0",
+          "0x167b4",
+          "0x167b8",
+          "0x167bc",
+          "0x167c0",
+          "0x167c4",
+          "0x167c8",
+          "0x167cc",
+          "0x167d0",
+          "0x167d4",
+          "0x167d8",
+          "0x167dc"
+        ]
+      },
+      {
+        "message": "0x5203",
+        "handlerBlock": "0x16ba8",
+        "comparisonTrace": [
+          "0x166cc",
+          "0x166d0",
+          "0x166d4",
+          "0x166d8",
+          "0x167a4",
+          "0x167a8",
+          "0x167ac",
+          "0x167b0",
+          "0x167b4",
+          "0x167b8",
+          "0x167bc",
+          "0x167c0",
+          "0x167c4",
+          "0x167c8",
+          "0x167cc",
+          "0x167d0",
+          "0x167d4",
+          "0x167d8",
+          "0x167dc"
+        ]
+      },
+      {
+        "message": "0x5204",
+        "handlerBlock": "0x16ba8",
+        "comparisonTrace": [
+          "0x166cc",
+          "0x166d0",
+          "0x166d4",
+          "0x166d8",
+          "0x167a4",
+          "0x167a8",
+          "0x167ac",
+          "0x167b0",
+          "0x167b4",
+          "0x167b8",
+          "0x167bc",
+          "0x167c0",
+          "0x167c4",
+          "0x167c8",
+          "0x167cc",
+          "0x167d0",
+          "0x167d4",
+          "0x167d8",
+          "0x167dc"
+        ]
+      }
+    ],
+    "knownCaseAssertionsPassed": true
+  },
+  "rawSendCandidate": {
+    "library": "libiap2client.so",
+    "export": "iap2_raw_msg_send",
+    "clientAddress": "0x16e8",
+    "localIpcCommand": "0x3000",
+    "driverEntry": "iap2_msg",
+    "driverBlock": "0x13d0c",
+    "driverFunction": "link_send_raw_message",
+    "caveat": "Static linkage verified; no runtime invocation or acceptance by phone demonstrated. This is send-only evidence, not a receive adapter."
+  },
+  "conclusions": [
+    "Stock destination information is distinct from maneuver RGI.",
+    "Incoming RGI IDs 0x5201/0x5202/0x5204 take the default/no-specialized-handler branch of the reconstructed control dispatch.",
+    "Adding advertised IDs alone cannot implement missing decoding, RGI component negotiation and HMI forwarding.",
+    "A native extension is a candidate architecture; feasibility and behavior on real hardware remain unverified."
+  ],
+  "reference": "https://github.com/luka-dev/mib2q-carplay-rgi/blob/main/docs/deploy/install.md"
+}

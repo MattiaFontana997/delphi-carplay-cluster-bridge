@@ -1,6 +1,6 @@
 {
   "name": "delphi-carplay-cluster-bridge",
-  "version": "0.0.3",
+  "version": "0.1.0-experimental",
   "private": true,
   "description": "Offline research tools for a proposed Delphi CarPlay cluster bridge",
   "license": "MIT",

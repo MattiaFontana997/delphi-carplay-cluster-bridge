@@ -1,4 +1,4 @@
-# Evidence ledger — 0.0.3
+# Evidence ledger — 0.0.4
 
 Recorded 2026-10-30. Input identified by the contributor as original `MST2_EU_VW_P0879D`, `STD2Nav_EU_VW`.
 
@@ -27,6 +27,18 @@ Full details: [Italian research report](research/2026-10-30-delphi-carplay.it.md
 | Native-navigation ownership interacts with CarPlay mode changes | Selected NavigationHandler.updateGuidanceActive bytecode references | Installed NavIgnore variant has not been analyzed |
 
 The IFS/JXE research conversion produced 19,403 MIBHMI and 5,332 Delphi classes with no skipped classes reported. Resulting ZIP CRCs passed; conversion was not validated by a full JVM verifier. Counts describe converted material, not exhaustive semantic analysis of every class. Proprietary binaries and classes remain local and are not distributed.
+
+## iAP2 reconstruction in 0.0.4
+
+See [Italian iAP2 report](research/2026-10-30-iap2.it.md) and [structured evidence](research/evidenze_iap2_delphi.json).
+
+- Identify is assembled through 24 stock builders. No dedicated route-guidance component builder was identified in that table.
+- Extra advertised IDs can be appended through `ident` / `sendmsgs` / `recvmsgs`; these lists do not implement a receiver or a new component builder.
+- Destination messages `0x10DA`–`0x10DD` describe destination information, not the maneuver stream.
+- A pure Python reconstruction of the bounded stock control-dispatch comparison tree evaluated all 65,536 possible 16-bit IDs and found 31 explicit cases. Incoming RGI IDs `0x5201`, `0x5202`, `0x5204` all reach its default branch. This is not ARM execution or a model of the whole session.
+- The client export `iap2_raw_msg_send` links through QNX IPC command `0x3000` to driver `link_send_raw_message`. Static linkage is established; runtime invocation, permissions, phone acceptance and RGI reception are not.
+
+These findings justify investigating a native extension plus the HMI/BAP candidate. They do not establish that adding configuration lines or loading a Java JAR alone can deliver RGI.
 
 ## Unknowns
 
